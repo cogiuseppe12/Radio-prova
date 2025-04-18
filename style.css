@@ -1,0 +1,100 @@
+
+body {
+    background-color: #000;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial Black', sans-serif;
+    background-image: radial-gradient(red 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 0 15px orange;
+    margin-top: 30px;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.turntable {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.disc {
+    width: 300px;
+    height: 300px;
+    background-color: #FFA500;
+    border: 10px solid black;
+    border-radius: 50%;
+    box-shadow: 0 0 50px orange;
+    position: relative;
+    transition: transform 1s linear;
+}
+
+.disc.spin {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.hole {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.reader {
+    width: 30px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    left: 135px;
+    top: 200px;
+    z-index: 1;
+}
+
+.disc-text {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: black;
+    z-index: 3;
+}
+
+#liveButton {
+    margin-top: 40px;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background-color: #222;
+    border: 3px solid orange;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+#liveButton:hover {
+    box-shadow: 0 0 25px orange;
+}
